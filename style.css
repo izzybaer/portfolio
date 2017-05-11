@@ -1,32 +1,44 @@
 * {
- margin: 0;
- padding: 0;
- width: 100%;
- box-sizing: border-box;
- border-style: 1px solid black;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 html, body {
- box-sizing: border-box;
- border-style: 1px solid black;
- height: 100%;
- width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
-.fa {
- float: right;
- font-size: 3em;
+.social {
+  float:left;
+  display: inline;
+  text-align: left;
+  font-size: 3em;
+}
+.hamburger {
+  text-align: right;
+  float: right;
+  font-size: 3em;
 }
 
 .main-nav {
+  text-align:center;
+  display: inline;
   padding: 0.1em;
   font-size: 1.5em;
   float:left;
-  width: 960px;
+  width: 100%;
+}
+
+ul li {
+  text-align: center;
+  display: inline;
 }
 
 @media screen and (min-width:640px) {
-  .fa {
+  .fa-bars {
     display:none;
   }
 }
