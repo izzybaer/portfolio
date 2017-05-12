@@ -1,5 +1,5 @@
 'use strict';
-console.log('booya');
+
 var images = [];
 
 function Project (rawDataObj) {
