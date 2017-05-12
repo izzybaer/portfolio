@@ -1,7 +1,6 @@
 'use strict';
 
 var projectData = [
-
   {
     name: 'Izabella Baer',
     title: 'Guardians of the Goats',

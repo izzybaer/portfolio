@@ -24,7 +24,6 @@ images.forEach(function(project) {
 
 $(document).ready(function(){
   $('section').hide();
-
 });
 
 $('.nav-menu li').on('click', function(){
