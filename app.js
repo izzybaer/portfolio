@@ -1,25 +1,17 @@
 'use strict';
-
+console.log('booya');
 var images = [];
 
 function Project (rawDataObj) {
-  this.name = rawDataObj.name;
-  this.title = rawDataObj.title;
-  this.url = rawDataObj.url;
-  this.description = rawDataObj.description;
+  for (var key in rawDataObj) {
+    this[key] = rawDataObj[key];
+  }
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
-  $newProject.addClass('draft');
-
-  $newProject.find('.byline a').html(this.name);
-  $newProject.find('h1:first').html(this.title);
-  $newProject.find('.byline a').attr('href', this.url);
-  $newProject.find('.project-description').html(this.description);
-  $newProject.append('<hr>');
-  return $newProject;
+  var template = $('#portfolio-template').html();
+  var templateRender = Handlebars.compile(template);
+  return templateRender(this);
 };
 
 projectData.forEach(function(projectObject) {
@@ -27,5 +19,25 @@ projectData.forEach(function(projectObject) {
 });
 
 images.forEach(function(project) {
-  $('#projects').append(project.toHtml());
+  $('#portfolio').append(project.toHtml());
+});
+
+$(document).ready(function(){
+  $('section').hide();
+
+});
+
+$('.nav-menu li').on('click', function(){
+  $('section').hide();
+  if ($(this).hasClass('nav-home')){
+    $('#home').show();
+  } else if ($(this).hasClass('nav-about')){
+    $('#about').show();
+  } else if ($(this).hasClass('nav-portfolio')){
+    console.log('blah');
+    $('#portfolio, #portfolio *').show();
+  } else if ($(this).hasClass('nav-contact')){
+    $('#contact').show();
+  }
+
 });
