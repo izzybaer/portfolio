@@ -8,6 +8,8 @@ html, body {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  color: #153351;
+  background-color: #FFFFFF;
 }
 
 .social {
@@ -29,11 +31,27 @@ html, body {
   font-size: 1.5em;
   float:left;
   width: 100%;
+  background-color: #4ABBC7;
+}
+
+.nav-menu {
+  text-align: center;
+  display:inline;
+  width:100%;
+  padding-right: 13%;
 }
 
 ul li {
   text-align: center;
   display: inline;
+}
+
+#photo {
+  text-align: center;
+}
+
+.byline img {
+  text-align: center;
 }
 
 @media screen and (min-width:640px) {
