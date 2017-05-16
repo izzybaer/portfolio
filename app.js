@@ -14,13 +14,32 @@ Project.prototype.toHtml = function() {
   return templateRender(this);
 };
 
-projectData.forEach(function(projectObject) {
-  images.push(new Project(projectObject));
-});
+Project.loadAll = function(rawData) {
+  rawData.forEach(function(projectObject) {
+    images.push(new Project(projectObject));
+  });
 
-images.forEach(function(project) {
-  $('#portfolio').append(project.toHtml());
-});
+  images.forEach(function(project) {
+    $('#portfolio').append(project.toHtml());
+  });
+}
+
+Project.fetchAll = function() {
+  if(localStorage.rawData) {
+    Project.loadAll(JSON.parse(localStorage.rawData))
+
+  } else {
+    $.getJSON('project-data.json')
+    .then(function(rawData) {
+      Project.loadAll(rawData)
+      localStorage.rawData = JSON.stringify(rawData)
+    },
+    function(err) {
+      console.log(err);
+    });
+  }
+}
+
 
 $(document).ready(function(){
   $('section').hide();
