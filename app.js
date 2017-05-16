@@ -33,10 +33,11 @@ $('.nav-menu li').on('click', function(){
   } else if ($(this).hasClass('nav-about')){
     $('#about').show();
   } else if ($(this).hasClass('nav-portfolio')){
-    console.log('blah');
     $('#portfolio, #portfolio *').show();
   } else if ($(this).hasClass('nav-contact')){
     $('#contact').show();
   }
 
 });
+
+//This way easier to show the tab content, compared to using the "data-content"
