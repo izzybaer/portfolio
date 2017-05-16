@@ -3,3 +3,80 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  color: #153351;
+  background-color: #FFFFFF;
+}
+
+.social {
+  float:left;
+  display: inline;
+  text-align: left;
+  font-size: 3em;
+}
+.hamburger {
+  text-align: right;
+  float: right;
+  font-size: 3em;
+}
+
+.main-nav {
+  text-align:center;
+  display: inline;
+  padding: 0.1em;
+  font-size: 1.5em;
+  float:left;
+  width: 100%;
+  background-color: #4ABBC7;
+}
+.main-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.main-nav li {
+  display: inline;
+  margin-right: .2em;
+  font-size: 1em;
+  font-family: 'Arimo', sans-serif;
+}
+
+.nav-menu {
+  text-align: center;
+  display:inline;
+  width:100%;
+  padding-right: 13%;
+}
+
+ul li {
+  text-align: center;
+  display: inline;
+}
+
+#photo {
+  text-align: center;
+}
+
+.byline img {
+  text-align: center;
+}
+
+@media screen and (min-width: 715px) {
+   .fa fa-bars {
+     display: none;
+   }
+   .main-nav ul, li {
+     display: inline-block;
+     font-size: 1em;
+     padding: .5em 0 .5em 0;
+   }
+   .main-nav:hover ul, li {
+     display: inline-block;
+   }
+}
