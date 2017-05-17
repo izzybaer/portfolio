@@ -13,16 +13,40 @@ html, body {
 }
 
 .social {
+  margin-left: 0.2em;
   float:left;
   display: inline;
   text-align: left;
   font-size: 3em;
+}
+
+.social a {
+  color: #153351;
+  font-size: 0.9em;
+  margin: -0.1em;
 }
 .hamburger {
   text-align: right;
   float: right;
   font-size: 3em;
 }
+
+.fa.fa-bars {
+  display: inline-block;
+  margin-right: 0.2em;
+}
+
+/*.main-nav:hover ul, li {
+  display: inline-block;
+}*/
+
+.main-nav:hover ul {
+  display: block;
+}
+
+/*.main-nav:hover li {
+  display: inline;
+}*/
 
 .main-nav {
   text-align:center;
@@ -50,9 +74,14 @@ html, body {
 .nav-menu {
   text-align: center;
   display:inline;
-  width:100%;
-  padding-right: 13%;
+  width:33%;
+  margin-top: 14px;
+  margin-right: 213px;
 }
+
+/*.nav-menu ul, li {
+  display: inline-block;
+}*/
 
 ul li {
   text-align: center;
@@ -68,7 +97,7 @@ ul li {
 }
 
 @media screen and (min-width: 715px) {
-   .fa fa-bars {
+   .fa.fa-bars {
      display: none;
    }
    .main-nav ul, li {
@@ -78,5 +107,12 @@ ul li {
    }
    .main-nav:hover ul, li {
      display: inline-block;
+   }
+   .nav-menu {
+     text-align: center;
+     display:inline;
+     width:33%;
+     margin-top: 14px;
+     margin-right: 213px;
    }
 }
