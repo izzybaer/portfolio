@@ -1,6 +1,6 @@
 'use strict';
 
-let app = app || {};
+var app = app || {};
 
 (function(module) {
   function Project (rawDataObj) {
@@ -18,13 +18,21 @@ let app = app || {};
   };
 
   Project.loadAll = function(rawData) {
-    rawData.forEach(function(projectObject) {
-      Project.all.push(new Project(projectObject));
-    });
+    Project.all = rawData.map(function(project) {
+      return new Project(project);
+    })
 
     Project.all.forEach(function(project) {
       $('#portfolio').append(project.toHtml());
     });
+
+    console.table(Project.all);
+
+    console.log(`Hey ya'all, I've written: ${Project.all.map(function(project) {
+      return project.description.split(' ').length;
+    }).reduce(function(acc, curr) {
+      return acc + curr;
+    })} total words in all of my project descriptions`)
   }
 
   Project.fetchAll = function() {
