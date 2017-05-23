@@ -10,7 +10,6 @@
   <link rel="stylesheet" type="text/css" href="styles/modules.css"/>
   <script src="https://use.fontawesome.com/4e8a544b21.js"></script>
   <script id="portfolio-template" type="text/x-handlebars-template">
-    <section class="tab-content">
       <article class="template">
         <h1>{{title}}</h1>
         <div class="byline">
@@ -23,8 +22,21 @@
         <section class="project-description">
         </section>
       </article>
-    </section>
   </script>
+  <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank">
+          <h3>{{name}}</h3>
+        </a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{updated_at}}</p>
+        {{#if watchers_count}}
+          <p>{{watchers_count}} watching this repo</p>
+        {{/if}}
+      </li>
+    </script>
 </head>
 <body>
   <header>
@@ -48,7 +60,7 @@
     </nav>
   </header>
   <main>
-    <section id="home" class="portfolio-content">
+    <section id="home" class="tab-content">
       <h1>Izabella Arya Baer</h1>
       <br>
       <div class="writer">
@@ -73,8 +85,12 @@
         </ul>
       </div>
     </section>
-    <section id="about" class="portfolio-content">
+    <section id="about" class="tab-content">
       <h1>about me</h1>
+      <ul>
+        <li>I love coding!</li>
+        <li>I love goats!</li>
+      </ul>
       <p>Tofu tote bag leggings organic af schlitz forage tousled, poke crucifix shoreditch cliche salvia vegan. Succulents +1 four loko retro, chambray yr venmo cred you probably haven't heard of them waistcoat 3 wolf moon williamsburg. Biodiesel mixtape godard beard, four dollar toast hot chicken church-key kogi lo-fi chicharrones shabby chic keffiyeh butcher prism. 90's narwhal lyft waistcoat, vegan hashtag pork belly succulents church-key. Unicorn retro put a bird on it, street art prism sustainable health goth. Art party messenger bag photo booth small batch, meh cliche jean shorts paleo hoodie prism tilde lomo. Knausgaard bitters church-key, fanny pack coloring book kinfolk celiac health goth hexagon craft beer post-ironic typewriter mlkshk before they sold out.</p>
 
       <p>Lomo ugh selvage plaid, la croix distillery XOXO godard. Scenester synth street art readymade. Etsy blog affogato, succulents food truck PBR&amp;B everyday carry craft beer irony vaporware. Polaroid post-ironic keffiyeh yuccie vexillologist live-edge, pour-over gochujang art party single-origin coffee neutra whatever tilde. Street art messenger bag lyft everyday carry mlkshk vice. Twee meh lumbersexual man bun cray heirloom. Yr kogi woke roof party, butcher 90's paleo pop-up church-key cardigan vice gochujang fanny pack gastropub keytar.</p>
@@ -95,11 +111,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="scripts/models/githubtoken.js"></script>
-  <script src="scripts/models/app.js" type="text/javascript"></script>
-  <script src="scripts/controllers/projectController.js" type="text/javascript"></script>
-  <script src="scripts/controllers/aboutController.js" type="text/javascript"></script>
-  <script src="scripts/controllers/contactController.js" type="text/javascript"></script>
-  <script src="scripts/controllers/routes.js" type="text/javascript"></script>
+  <script src="scripts/models/app.js"></script>
+  <script src="/scripts/models/repo.js"></script>
+  <script src="/scripts/views/repoView.js"></script>
+  <script src="scripts/controllers/projectController.js"></script>
+  <script src="scripts/controllers/aboutController.js"></script>
+  <script src="scripts/controllers/contactController.js"></script>
+  <script src="scripts/controllers/routes.js"></script>
   <script>
   app.Project.fetchAll();
   </script>
