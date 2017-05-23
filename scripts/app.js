@@ -19,7 +19,7 @@ var app = app || {};
 
   Project.loadAll = function(rawData) {
     Project.all = rawData.map(function(project) {
-      return new Project(project);
+      return new app.Project(project);
     })
 
     Project.all.forEach(function(project) {
@@ -53,21 +53,8 @@ var app = app || {};
 
 
   $(document).ready(function(){
-    $('section').hide();
+    $('#about').show();
   });
 
-  $('.nav-menu li').on('click', function(){
-    $('section').hide();
-    if ($(this).hasClass('nav-home')){
-      $('#home').show();
-    } else if ($(this).hasClass('nav-about')){
-      $('#about').show();
-    } else if ($(this).hasClass('nav-portfolio')){
-      $('#portfolio, #portfolio *').show();
-    } else if ($(this).hasClass('nav-contact')){
-      $('#contact').show();
-    }
-
-  });
   module.Project = Project;
 }(app))
