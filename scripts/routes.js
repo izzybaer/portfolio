@@ -1,9 +1,9 @@
 'use strict';
 
-page('/', app.projectController.initProjectPage);
-page('/about', app.aboutController.init);
-page('/contact', app.contactController.init);
-page('/portfolio', app.projectController.initProjectPage)
+page('/', app.projectController.initIndexPage);
+page('/about', app.aboutController.initIndexPage);
+page('/contact', app.contactController.initIndexPage);
+
 
 
 page();

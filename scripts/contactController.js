@@ -6,7 +6,8 @@ var app = app || {};
 
   const contactController = {};
 
-  contactController.init = function() {
+  contactController.initIndexPage = function() {
+    $('.portfolio-content').hide();
     $('#contact').show();
 
   };

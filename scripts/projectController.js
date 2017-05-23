@@ -6,10 +6,10 @@ var app = app || {};
 
   const projectController = {};
 
-  projectController.initProjectPage = function() {
-    app.Project.fetchAll()
+  projectController.initIndexPage = function() {
+    $('.portfolio-content').hide();
+    $('#portfolio').show();
 
-    $('#portfolio, #portfolio *').show();
   };
 
   module.projectController = projectController;

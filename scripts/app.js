@@ -19,7 +19,7 @@ var app = app || {};
 
   Project.loadAll = function(rawData) {
     Project.all = rawData.map(function(project) {
-      return new app.Project(project);
+      return new Project(project);
     })
 
     Project.all.forEach(function(project) {
@@ -52,9 +52,9 @@ var app = app || {};
   }
 
 
-  $(document).ready(function(){
-    $('#about').show();
-  });
+  // $(document).ready(function(){
+  //   $('#about').show();
+
 
   module.Project = Project;
 }(app))

@@ -6,9 +6,8 @@ var app = app || {};
 
   const aboutController = {};
 
-  aboutController.init = function() {
-    app.Project.fetchAll()
-
+  aboutController.initIndexPage = function() {
+    $('.portfolio-content').hide();
     $('#about').show();
   };
 
