@@ -22,11 +22,9 @@ var app = app || {};
       return new Project(project);
     })
 
-    Project.all.forEach(function(project) {
+    Project.all.map(function(project) {
       $('#portfolio').append(project.toHtml());
     });
-
-    console.table(Project.all);
 
     console.log(`Hey ya'all, I've written: ${Project.all.map(function(project) {
       return project.description.split(' ').length;
@@ -50,11 +48,6 @@ var app = app || {};
       });
     }
   }
-
-
-  // $(document).ready(function(){
-  //   $('#about').show();
-
 
   module.Project = Project;
 }(app))
