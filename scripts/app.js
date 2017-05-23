@@ -1,62 +1,60 @@
 'use strict';
 
-var images = [];
+var app = app || {};
 
-function Project (rawDataObj) {
-  for (var key in rawDataObj) {
-    this[key] = rawDataObj[key];
+(function(module) {
+  function Project (rawDataObj) {
+    for (var key in rawDataObj) {
+      this[key] = rawDataObj[key];
+    }
   }
-}
 
-Project.prototype.toHtml = function() {
-  var template = $('#portfolio-template').html();
-  var templateRender = Handlebars.compile(template);
-  return templateRender(this);
-};
+  Project.all = [];
 
-Project.loadAll = function(rawData) {
-  rawData.forEach(function(projectObject) {
-    images.push(new Project(projectObject));
-  });
+  Project.prototype.toHtml = function() {
+    var template = $('#portfolio-template').html();
+    var templateRender = Handlebars.compile(template);
+    return templateRender(this);
+  };
 
-  images.forEach(function(project) {
-    $('#portfolio').append(project.toHtml());
-  });
-}
+  Project.loadAll = function(rawData) {
+    Project.all = rawData.map(function(project) {
+      return new Project(project);
+    })
 
-Project.fetchAll = function() {
-  if(localStorage.rawData) {
-    Project.loadAll(JSON.parse(localStorage.rawData))
-
-  } else {
-    $.getJSON('project-data.json')
-    .then(function(rawData) {
-      Project.loadAll(rawData)
-      localStorage.rawData = JSON.stringify(rawData)
-    },
-    function(err) {
-      console.log(err);
+    Project.all.forEach(function(project) {
+      $('#portfolio').append(project.toHtml());
     });
-  }
-}
 
+    console.table(Project.all);
 
-$(document).ready(function(){
-  $('section').hide();
-});
-
-$('.nav-menu li').on('click', function(){
-  $('section').hide();
-  if ($(this).hasClass('nav-home')){
-    $('#home').show();
-  } else if ($(this).hasClass('nav-about')){
-    $('#about').show();
-  } else if ($(this).hasClass('nav-portfolio')){
-    $('#portfolio, #portfolio *').show();
-  } else if ($(this).hasClass('nav-contact')){
-    $('#contact').show();
+    console.log(`Hey ya'all, I've written: ${Project.all.map(function(project) {
+      return project.description.split(' ').length;
+    }).reduce(function(acc, curr) {
+      return acc + curr;
+    })} total words in all of my project descriptions`)
   }
 
-});
+  Project.fetchAll = function() {
+    if(localStorage.rawData) {
+      Project.loadAll(JSON.parse(localStorage.rawData))
 
-//This way easier to show the tab content, compared to using the "data-content"
+    } else {
+      $.getJSON('project-data.json')
+      .then(function(rawData) {
+        Project.loadAll(rawData)
+        localStorage.rawData = JSON.stringify(rawData)
+      },
+      function(err) {
+        console.log(err);
+      });
+    }
+  }
+
+
+  // $(document).ready(function(){
+  //   $('#about').show();
+
+
+  module.Project = Project;
+}(app))
