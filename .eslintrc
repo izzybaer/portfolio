@@ -31,3 +31,4 @@
     "new-cap": "warn",
     "no-redeclare": ["error", { "builtinGlobals": true }]
   }
+}
