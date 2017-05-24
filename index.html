@@ -23,20 +23,6 @@
         </section>
       </article>
   </script>
-  <script id="repo-template" type="text/x-handlebars-template">
-      <li>
-        <a href="{{html_url}}" target="_blank">
-          <h3>{{name}}</h3>
-        </a>
-        <p>Description: {{description}}</p>
-        <p>Language: {{language}}</p>
-        <p>Created: {{created_at}}</p>
-        <p>Last updated: {{updated_at}}</p>
-        {{#if watchers_count}}
-          <p>{{watchers_count}} watching this repo</p>
-        {{/if}}
-      </li>
-    </script>
 </head>
 <body>
   <header>
@@ -60,7 +46,7 @@
     </nav>
   </header>
   <main>
-    <section id="home" class="tab-content">
+    <section id="home" class="portfolio-content">
       <h1>Izabella Arya Baer</h1>
       <br>
       <div class="writer">
@@ -85,7 +71,7 @@
         </ul>
       </div>
     </section>
-    <section id="about" class="tab-content">
+    <section id="about" class="portfolio-content">
       <h1>about me</h1>
       <p>Tofu tote bag leggings organic af schlitz forage tousled, poke crucifix shoreditch cliche salvia vegan. Succulents +1 four loko retro, chambray yr venmo cred you probably haven't heard of them waistcoat 3 wolf moon williamsburg. Biodiesel mixtape godard beard, four dollar toast hot chicken church-key kogi lo-fi chicharrones shabby chic keffiyeh butcher prism. 90's narwhal lyft waistcoat, vegan hashtag pork belly succulents church-key. Unicorn retro put a bird on it, street art prism sustainable health goth. Art party messenger bag photo booth small batch, meh cliche jean shorts paleo hoodie prism tilde lomo. Knausgaard bitters church-key, fanny pack coloring book kinfolk celiac health goth hexagon craft beer post-ironic typewriter mlkshk before they sold out.</p>
 
@@ -106,9 +92,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+
   <script src="scripts/models/app.js"></script>
-  <script src="/scripts/models/repo.js"></script>
-  <script src="/scripts/views/repoView.js"></script>
+
   <script src="scripts/controllers/homeController.js"></script>
   <script src="scripts/controllers/aboutController.js"></script>
   <script src="scripts/controllers/projectController.js"></script>

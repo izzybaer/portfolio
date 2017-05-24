@@ -7,7 +7,7 @@ var app = app || {};
   const projectController = {};
 
   projectController.initIndexPage = function() {
-    $('.tab-content').hide();
+    $('.portfolio-content').hide();
     $('#portfolio').show();
 
   };

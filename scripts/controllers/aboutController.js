@@ -7,7 +7,7 @@ var app = app || {};
   const aboutController = {};
 
   aboutController.initIndexPage = function() {
-    $('.tab-content').hide();
+    $('.portfolio-content').hide();
     $('#about').show();
 
     app.repos.requestRepos(app.repoView.index);
