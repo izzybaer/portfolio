@@ -22,7 +22,7 @@ var app = app || {};
       return new Project(project);
     })
 
-    Project.all.forEach(function(project) {
+    Project.all.map(function(project) {
       $('#portfolio').append(project.toHtml());
     });
 
@@ -50,11 +50,6 @@ var app = app || {};
       });
     }
   }
-
-
-  // $(document).ready(function(){
-  //   $('#about').show();
-
 
   module.Project = Project;
 }(app))
