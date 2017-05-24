@@ -23,6 +23,19 @@
         </section>
       </article>
   </script>
+  <script id="repo-template" type="text/x-handlebars-template">
+    <li>
+      <a href="{{html_url}}" target="_blank">
+        <h3>{{name}}</h3>
+      </a>
+      <p>Description: {{description}}</p>
+      <p>Language: {{language}}</p>
+      <p>Created: {{created_at}}</p>
+      <p>Last updated: {{updated_at}}</p>
+      {{#if watchers_count}}
+        <p>{{watchers_count}} watching this repo</p>
+      {{/if}}
+    </li>
 </head>
 <body>
   <header>
@@ -46,7 +59,7 @@
     </nav>
   </header>
   <main>
-    <section id="home" class="portfolio-content">
+    <section id="home" class="tab-content">
       <h1>Izabella Arya Baer</h1>
       <br>
       <div class="writer">
@@ -71,8 +84,12 @@
         </ul>
       </div>
     </section>
-    <section id="about" class="portfolio-content">
+    <section id="about" class="tab-content">
       <h1>about me</h1>
+      <ul>
+        <li></li>
+        <li></li>
+      </ul>
       <p>Tofu tote bag leggings organic af schlitz forage tousled, poke crucifix shoreditch cliche salvia vegan. Succulents +1 four loko retro, chambray yr venmo cred you probably haven't heard of them waistcoat 3 wolf moon williamsburg. Biodiesel mixtape godard beard, four dollar toast hot chicken church-key kogi lo-fi chicharrones shabby chic keffiyeh butcher prism. 90's narwhal lyft waistcoat, vegan hashtag pork belly succulents church-key. Unicorn retro put a bird on it, street art prism sustainable health goth. Art party messenger bag photo booth small batch, meh cliche jean shorts paleo hoodie prism tilde lomo. Knausgaard bitters church-key, fanny pack coloring book kinfolk celiac health goth hexagon craft beer post-ironic typewriter mlkshk before they sold out.</p>
 
       <p>Lomo ugh selvage plaid, la croix distillery XOXO godard. Scenester synth street art readymade. Etsy blog affogato, succulents food truck PBR&amp;B everyday carry craft beer irony vaporware. Polaroid post-ironic keffiyeh yuccie vexillologist live-edge, pour-over gochujang art party single-origin coffee neutra whatever tilde. Street art messenger bag lyft everyday carry mlkshk vice. Twee meh lumbersexual man bun cray heirloom. Yr kogi woke roof party, butcher 90's paleo pop-up church-key cardigan vice gochujang fanny pack gastropub keytar.</p>
@@ -80,7 +97,7 @@
       <p>Occupy austin pour-over XOXO, vape DIY mustache green juice semiotics gentrify biodiesel letterpress schlitz godard. Meh stumptown humblebrag blog, vape mumblecore flannel blue bottle selvage put a bird on it health goth whatever. Craft beer green juice man braid flannel shoreditch. Pork belly keffiyeh put a bird on it bespoke. Semiotics tattooed kombucha williamsburg etsy. Poutine tote bag narwhal, helvetica austin DIY jianbing XOXO +1 organic vegan ramps literally raclette. Asymmetrical biodiesel selfies dreamcatcher.</p>
     </section>
 
-    <section id="contact" class="portfolio-content">
+    <section id="contact" class="tab-content">
       <h1>contact me</h1>
       <div class="contact-information">
         <p>Literally pok pok pabst brunch slow-carb tilde. Venmo deep v viral cliche polaroid kitsch swag 3 wolf moon irony, you probably haven't heard of them cold-pressed locavore vice leggings. Hot chicken quinoa street art neutra, chambray scenester humblebrag single-origin coffee aesthetic. Gochujang copper mug selvage, tilde sriracha vape seitan keffiyeh pork belly coloring book semiotics 3 wolf moon. Skateboard mustache iceland venmo, sriracha listicle occupy small batch brooklyn food truck plaid portland forage. Irony pinterest fashion axe, roof party locavore pug typewriter tilde. +1 synth DIY, disrupt umami copper mug offal.</p>
@@ -94,7 +111,10 @@
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 
   <script src="scripts/models/app.js"></script>
+  <script src="scripts/models/repo.js"></script>
 
+  <script src="scripts/views/repoView.js"></script>
+  
   <script src="scripts/controllers/homeController.js"></script>
   <script src="scripts/controllers/aboutController.js"></script>
   <script src="scripts/controllers/projectController.js"></script>
