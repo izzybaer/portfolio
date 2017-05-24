@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/izzybaer/portfolio#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.2",
+    "express-request-proxy": "^2.0.0",
+    "pg": "^6.2.3"
   }
 }
