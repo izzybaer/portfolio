@@ -26,8 +26,6 @@ var app = app || {};
       $('#portfolio').append(project.toHtml());
     });
 
-    console.table(Project.all);
-
     console.log(`Hey ya'all, I've written: ${Project.all.map(function(project) {
       return project.description.split(' ').length;
     }).reduce(function(acc, curr) {
