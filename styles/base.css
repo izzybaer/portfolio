@@ -20,6 +20,10 @@ html, body {
   font-size: 3em;
 }
 
+.nav-link a {
+  text-decoration: none;
+}
+
 .social a {
   color: #153351;
   font-size: 0.9em;
@@ -35,18 +39,10 @@ html, body {
   display: inline-block;
   margin-right: 0.2em;
 }
-/* might need to comment this back in later...*/
-/*.main-nav:hover ul, li {
-  display: inline-block;
-}*/
 
 .main-nav:hover ul {
   display: block;
 }
-/* might need to comment this back in later...*/
-/*.main-nav:hover li {
-  display: inline;
-}*/
 
 .main-nav {
   text-align:center;
@@ -78,10 +74,6 @@ html, body {
   margin-top: 14px;
   margin-right: 213px;
 }
-
-/*.nav-menu ul, li {
-  display: inline-block;
-}*/
 
 ul li {
   text-align: center;

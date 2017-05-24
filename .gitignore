@@ -65,4 +65,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+scripts/models/githubtoken.js
+
 # End of https://www.gitignore.io/api/osx,linux,windows

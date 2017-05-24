@@ -7,8 +7,10 @@ var app = app || {};
   const aboutController = {};
 
   aboutController.initIndexPage = function() {
-    $('.portfolio-content').hide();
+    $('.tab-content').hide();
     $('#about').show();
+
+    app.repos.requestRepos(app.repoView.index);
   };
 
   module.aboutController = aboutController;
