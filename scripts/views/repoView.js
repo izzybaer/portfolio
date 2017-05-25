@@ -10,7 +10,7 @@ var app = app || {};
     let $about = $('#about');
 
     $about.find('ul').empty();
-    $about.show().sublings().hide();
+    $about.show().siblings().hide();
   };
 
 
